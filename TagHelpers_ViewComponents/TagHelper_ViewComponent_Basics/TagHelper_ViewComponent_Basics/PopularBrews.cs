@@ -1,11 +1,17 @@
-﻿@page
-@model IndexModel
-@using TagHelper_ViewComponent_Basics.Pages.Models;
-@{
-    ViewData["Title"] = "Home page";
-}
+﻿using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using TagHelper_ViewComponent_Basics.Pages.Models;
 
-@{ List<Speaker> speakers = new List<Speaker>
+namespace TagHelper_ViewComponent_Basics
+{
+    public class PopularBrews : ViewComponent
+    {
+        public async Task<IViewComponentResult> InvokeAsync(int count)
+        {
+            List<Speaker> speakers = new List<Speaker>
 {
         new Speaker
         {
@@ -40,9 +46,9 @@
             TrackName = "JavaScript",
             Company = "SpeedCurver"
         }
-    }; }
+    };
+            return View("Default", speakers);
 
-
-<div class="container">
-   @await Component.InvokeAsync("PopularBrews", new {count = 1 });
-</div>
+        }
+    }
+}

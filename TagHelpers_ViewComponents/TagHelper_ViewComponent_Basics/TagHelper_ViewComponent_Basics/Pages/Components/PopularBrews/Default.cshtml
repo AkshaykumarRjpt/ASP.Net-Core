@@ -1,0 +1,12 @@
+﻿@model IEnumerable<TagHelper_ViewComponent_Basics.Pages.Models.Speaker>
+<div class='card'>
+    @foreach (var item in Model)
+    {
+        <div class='card-img'><img src='static/speakers/Speaker-@(item.SpeakerId).jpg' /></div>
+                        <h4 class='card-title'><a href='#'>@item.UserFirstName @item.UserLastName</a></h4>
+                        <p class='card-position'>{@item.Company}</p>
+                        <p class='card-description'>Keynote: Will be announced soon</p>
+                                                                       
+      }
+
+</div>
