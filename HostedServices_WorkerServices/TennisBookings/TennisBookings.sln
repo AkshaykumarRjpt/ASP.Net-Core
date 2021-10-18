@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30711.63
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TennisBookings", "TennisBookings\TennisBookings.csproj", "{49341AC1-3FAC-414D-BFE3-F9DD43B6091E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TennisBookings", "src\TennisBookings\TennisBookings.csproj", "{49341AC1-3FAC-414D-BFE3-F9DD43B6091E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "external", "external", "{8A42F162-EDCD-4C00-A36B-2E22A248D625}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherService.Api", "WeatherService.Api\WeatherService.Api.csproj", "{DC70CF0A-33E7-4DA3-A103-C97F461FF988}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +19,16 @@ Global
 		{49341AC1-3FAC-414D-BFE3-F9DD43B6091E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{49341AC1-3FAC-414D-BFE3-F9DD43B6091E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{49341AC1-3FAC-414D-BFE3-F9DD43B6091E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC70CF0A-33E7-4DA3-A103-C97F461FF988}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC70CF0A-33E7-4DA3-A103-C97F461FF988}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC70CF0A-33E7-4DA3-A103-C97F461FF988}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC70CF0A-33E7-4DA3-A103-C97F461FF988}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DC70CF0A-33E7-4DA3-A103-C97F461FF988} = {8A42F162-EDCD-4C00-A36B-2E22A248D625}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0F00C204-282C-47A3-9990-A1CDF33B46EB}

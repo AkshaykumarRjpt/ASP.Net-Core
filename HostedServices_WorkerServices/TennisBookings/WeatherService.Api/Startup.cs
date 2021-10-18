@@ -1,15 +1,10 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace TennisBookings
+namespace WeatherService.Api
 {
     public class Startup
     {
@@ -23,7 +18,10 @@ namespace TennisBookings
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews();
+
+            services.AddControllers();
+            services.AddMemoryCache();
+           
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -31,17 +29,10 @@ namespace TennisBookings
         {
             if (env.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();
-               
+                app.UseDeveloperExceptionPage();             
             }
-            else
-            {
-                app.UseExceptionHandler("/Home/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                
-            }
-           
-            app.UseStaticFiles();
+
+            app.UseHttpsRedirection();
 
             app.UseRouting();
 
@@ -49,10 +40,7 @@ namespace TennisBookings
 
             app.UseEndpoints(endpoints =>
             {
-                
-                endpoints.MapControllerRoute(
-                    name: "default",                   
-                    pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapControllers();
             });
         }
     }
