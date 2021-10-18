@@ -32,15 +32,15 @@ namespace TennisBookings
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseHsts();
+               
             }
             else
             {
                 app.UseExceptionHandler("/Home/Error");
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                app.UseHsts();
+                
             }
-            app.UseHttpsRedirection();
+           
             app.UseStaticFiles();
 
             app.UseRouting();
@@ -49,9 +49,10 @@ namespace TennisBookings
 
             app.UseEndpoints(endpoints =>
             {
+                
                 endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    name: "default",                   
+                    pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
             });
         }
     }
